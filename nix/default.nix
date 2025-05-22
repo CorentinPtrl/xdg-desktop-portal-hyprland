@@ -22,6 +22,7 @@
   wayland,
   wayland-protocols,
   wayland-scanner,
+  libei,
   debug ? false,
   version ? "git",
 }:
@@ -58,6 +59,7 @@ stdenv.mkDerivation {
     wayland
     wayland-protocols
     wayland-scanner
+    libei
   ];
 
   cmakeBuildType =
