@@ -25,12 +25,13 @@
   libei,
   debug ? false,
   version ? "git",
+  src,
 }:
 stdenv.mkDerivation {
   pname = "xdg-desktop-portal-hyprland" + lib.optionalString debug "-debug";
   inherit version;
 
-  src = ../.;
+  inherit src;
 
   depsBuildBuild = [
     pkg-config
@@ -81,6 +82,7 @@ stdenv.mkDerivation {
   '';
 
   meta = with lib; {
+    mainProgram = "xdg-desktop-portal-hyprland";
     homepage = "https://github.com/hyprwm/xdg-desktop-portal-hyprland";
     description = "xdg-desktop-portal backend for Hyprland";
     license = licenses.bsd3;
